@@ -1,6 +1,6 @@
 # Steps to run the application
 
-This project contains two folders:
+This project contains two folders: <br>
  1> contains the contracts
  2> contains the server and basic frontend code (for testing it with metamask)
 

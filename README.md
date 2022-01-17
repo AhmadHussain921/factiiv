@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+# Steps to run the application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project contains two folders:
+ 1> contains the contracts
+ 2> contains the server and basic frontend code (for testing it with metamask)
 
-## Available Scripts
+## Deploying contracts
 
-In the project directory, you can run:
+ 1> firstly attach local host ganache with the metamask.
+ 2> open remix and connect the local host code from the metaTransactions folder.
+ 3> Once metamask and remix connected with localhost, copy any private key of an address and import that account in the metamask, we will use this account to deploy the contracts.
+ 4> deploy the factsToken contract.
+ 5> deploy the factiiv contract with two values:
+    1: factsToken contract address 
+    2: use the same address of the user, to set him as the root user which will have all the roles.
+ 6> copy factiiv contract address and open the factsToken contract in remix. Add the value of factiiv contract address in the "setFactiiv" function.
+ 
 
-### `npm start`
+## Configuring server
+1> Copy factiiv contract address and paste it in the App.js & server.js.  Line 8 & Line 18 respectively.
+2> Copy factsToken contract address and paste it in the App.js & server.js. Line 9 & Line 19 respectively.
+3> Copy factiiv contract ABI and replace it in the businessContractABI.json. 
+4> Copy factsToken contract ABI and replace it in the tokenContractABI.json.
+5> Copy another private key of differnt account from the ganache, and add it in the senderAccount in the server.js line 16. This account will pay for the gas fee for meta Transaction. 
+6> Open the terminal in meta directory, and  run ### `npm install`
+7> Run ### `npm start`
+8> Open another terminal and run ### `node server.js` to run the server.
+9> A new tab will open in browser, connect an account of metamask which has 0 ETH and then click on the submit button. Sign the transaction.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Verifying the transaction
+1> you can see in the App.js, there is a function called "getData" which contains the harcoded value {function signature and the parameters in array}. This will trigger on clicking the submit button from frontend and call the contract. 
+2> you can verify the same parameters, by going in to the contract in remix and see the value of the function, that was being called.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

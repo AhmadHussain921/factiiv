@@ -24,6 +24,7 @@ This project contains two folders: <br>
 5> Copy another private key of differnt account from the ganache, and add it in the senderAccount in the server.js line 16. This account will pay for the gas fee for meta Transaction. <br>
 6> Open the terminal in meta directory, and  run  `npm install`<br>
 7> Run `npm start`<br>
+8> Run `node server.js` in another tab.<br>
 9> A new tab will open in browser, connect an account of metamask which has 0 ETH and then click on the submit button. Sign the transaction.<br>
 
 ## Verifying the transaction<br>
